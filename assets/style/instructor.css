@@ -1,0 +1,804 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+:root{
+    --back_color : #245C51;
+    --hover_color : #FF6652;
+}
+#epora_header{
+    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    box-shadow: rgb(149 157 165 / 40%) 0px 8px 24px;
+}
+#epora_header .epora_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+}
+#epora_header .home_logo{
+    width: 150px;
+}
+.home_logo img{
+    width: 100%;
+}
+.home_header_ul a {
+    color: #777C90;
+    font-size: 20px;
+    padding: 15px 0;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.home_header_ul a i {
+    font-size: 15px;
+}
+.home_header_ul li:hover a{
+    color: var(--hover_color)
+}
+.home_header_ul li{
+    position: relative;
+}
+.header_sign_in{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    background: rgba(36, 93, 81, 0.1);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+.header_sign_in a i{
+    font-size: 30px;
+    color: #777C90;
+}
+.header_shopping_bag{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(36, 93, 81, 0.1);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+.mobile_menu_bars{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(36, 93, 81, 0.1);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 999;
+}
+.mobile_menu_bars i{
+    font-size: 30px;
+}
+.header_shopping_bag a i {
+    font-size: 30px;
+    color: #777C90;
+}
+.header_sign_in:hover a i {
+    color: #fff;
+}
+.header_shopping_bag:hover a i {
+    color: #fff;
+}
+.header_sign_in:hover {
+    background-color: #245C51
+}
+.header_shopping_bag:hover{
+    background-color: #245C51
+}
+.mobile_menu_bars:hover{
+    background-color: #245C51;
+}
+.header_dropdown_menu ul li a{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #000 !important;
+    transition: 0.5s ease-in-out;
+}
+.header_dropdown_menu a:hover{
+    color: var(--hover_color) !important
+}
+.header_dropdown_menu{
+    position: absolute;
+    width: 200px;
+    top: 40px;
+    background-color: #f5f5f5;
+    display: none;
+}
+.header_dropdown_menu ul{
+    padding: 0;
+}
+.opening:hover .header_dropdown_menu{
+    display: block !important;
+} 
+/* mobile navbar */
+.mobile_navbar a::selection ,h1::selection ,  h2::selection , span::selection , h4::selection{
+    background-color: #000;
+    color: #fff;
+}
+.mobile_navbar .mobile_navbar_ul h2{
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px;
+}
+.mobile_navbar  ul li a{
+    color: #000;
+}
+.mobile_navbar .mobile_info ul li {
+    list-style-type: circle;
+    font-size: 20px;
+}
+.mobile_navbar_ul ul li a div{
+    border-bottom: 1px solid #ebebeb;
+}
+.mobile_navbar .mobile_navbar_ul i{
+    font-size: 25px;
+    transition: 0.5s ease-in-out;
+}
+.mobile_navbar_ul i:hover{
+    transform: rotate(45deg);
+}
+.mobile_navbar_social i{
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.mobile_navbar{
+    background-color: #fff;
+    width: 330px;
+    height: 100vh;
+    padding: 25px;
+    display: none;
+    position: absolute;
+    right: -350px;
+    z-index: 9999;
+    animation: menu 0.5s linear forwards;
+}
+@keyframes menu{
+    from {
+        right: -350px;
+    }
+    to {
+        right: 0;
+    }
+ }
+.mobile_menu_bars{
+    visibility: hidden;
+}
+/* responsive */
+@media screen and (max-width : 992px){
+    .mobile_menu_bars{
+        /* display: block; */
+        visibility: visible;
+    }
+    .home_header_ul{
+        display: none;
+    }
+    .mobile_menu_bars:before{
+        content: "\f0c9";
+        font-family: "fontAwesome";
+        color: #777C90;
+        font-size: 30px;
+    }
+    .mobile_navbar.active {
+        display: block;
+    }
+    .mobile_menu_bars:hover::before{
+        color: #fff;
+    }
+}
+@media screen and (max-width : 768px){
+    .header_sign_in , .header_shopping_bag{
+        display: none;
+    }
+}
+/* instructor_path */
+.instructor_path{
+    width: 320px;
+    background-color: #ffffff;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(5, 13, 54, 0.29));;
+}
+.instructor_path span a{
+    text-decoration: none;
+    color: #777C90;
+}
+.instructor_path span a::selection{
+    background-color: #000;
+    color: #fff;
+}
+.instructor_path span{
+    font-size: 25px;
+}
+#instructor_profile {
+    background-image: url('https://weblearnbd.net/tphtml/epora/epora/assets/img/breadcrumb/breadcrumb-bg-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    padding: 200px 0;
+}
+@media screen and (max-width : 350px){
+    .instructor_path{
+        width: 100%;
+    }
+}
+/* instructor_bio */
+#instructor_bio_section{
+    padding: 80px 0;
+}
+#instructor_bio_section .instructor_main_part{
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 10px;
+}
+.instructor_bio{
+    padding: 15px 15px 35px 15px;
+    background-color: #ffffff;
+    box-shadow: rgb(149 157 165 / 50%) 0px 8px 24px;
+    border-radius: 10px;
+}
+.expert_img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.expert_info_profession{
+    padding:0 15px;
+}
+.expert_info_profession h4{
+    margin: 25px 0 20px 0;
+}
+.expert_info_profession p::selection{
+    background-color: #000;
+    color: #fff;
+}
+/* expert_follow_part */
+.expert_follow_part{
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 15px;
+}
+.expert_follow_part h2{
+    font-weight: 700;
+}
+.expert_follow_part span{
+    color: #777C90;
+    font-size: 20px;
+}
+/* exper_follow_btn */
+.expert_follow_btn{
+    padding: 0 15px;
+}
+.expert_follow_btn button{
+    width: 100%;
+    background-color: #FF6652;
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0;
+    transition: 0.5s ease-in-out;
+}
+.expert_follow_btn button:hover{
+    background-color: #245C51;
+    color: #fff;
+}
+/* about_expert */
+.about_expert{
+    padding: 0 15px;
+}
+.about_expert_left_side{
+    display: flex;
+    align-items: center;
+}
+.about_expert_left_side h5{
+    margin-left: 10px;
+}
+.about_expert_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(5, 13, 54, 0.1);
+    padding: 10px 0 15px 0;
+}
+.about_expert_icon{
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(5, 13, 54, 0.1);
+    border-radius: 50%;
+    transition: 0.7s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_expert_div h5::selection{
+    background-color: #000;
+    color: #fff;
+}
+.about_expert_div span{
+    color: #777C90;
+}
+.about_expert_div:hover .about_expert_icon{
+    background-color: #FF6652;
+}
+.about_expert_div:hover .about_expert_icon i{
+    color: #fff;
+}
+/* expert_follow_more */
+.expert_follow_more{
+    padding: 0 15px;
+}
+.expert_follow_more h4{
+    margin-top: 40px;
+}
+.expert_follow_more a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FCF0EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    margin-right: 10px;
+}
+.expert_follow_more a i{
+    color: #FF6652;
+}
+.expert_follow_more a:hover{
+    background-color: #FF6652;
+}
+.expert_follow_more a:hover i {
+    color: #fff;
+}
+.expert_social_contact {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+
+/* repsonsive expert_bio */
+/* biography_content */
+.instructor_biography{
+    padding: 0 0 0 15px;
+    width: calc(100% - 450 px);
+}
+.biography_content h2{
+    font-weight: 700;
+}
+.biography_content p{
+    color: #777C90;
+    line-height: 28px;
+    margin: 30px 0;
+    font-size: 20px;
+}
+.biography_content p::selection{
+    background-color: #000; 
+    color: #fff;
+}
+.biography_counter h1{
+    font-weight: 700;
+}
+.biography_counter .counter_hr , #instructor_counter_section .counter_hr{
+    width: 50px;
+    border: 1.5px solid #FF6652;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.biography_counter p{
+    color: #777C90;
+    font-size: 20px;
+}
+.biography_counter p::selection{
+    background-color: #000;
+    color: #fff;
+}
+.biography_counter .counter_section{
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    gap: 10px;
+    text-align: center;
+}
+/* biograpyh courses */
+.biography_courses .course_info{
+    border-radius: 10px;
+    box-shadow: 5px 15px 30px rgb(5 13 54 / 15%);
+}
+.course_info:hover .course_img img{
+    transform: scale(1.1);
+}
+.course_img{
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+.course_img img{
+    transition: 0.5s ease-in-out;
+    width: 100%;
+    border-radius: 10px;
+}
+.biography_courses .course_price a{
+    padding: 10px;
+    background-color: rgba(255, 102, 82, 0.1);
+    border-radius: 5px;
+    color: #000;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+    /* font-size: 20px; */
+}
+.biography_courses .course_price a:hover{
+    color: #fff;
+    background-color: var(--hover_color);
+}
+.course_statistics{
+    border-bottom: 1px solid rgba(5, 13, 54, 0.1);
+    padding: 20px 0;
+}
+.course_statistics span{
+    color: #777C90;
+    font-size: 20px;
+}
+.course_name a{
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+.course_name a:hover{
+    color: var(--hover_color);
+}
+.course_price{
+    margin-top: 20px;
+}
+.section_middle{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
+}
+.course_content{
+    padding: 30px 0;
+}
+.course_info{
+    margin-top: 40PX;
+}
+.heart{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.heart:hover div{
+    background-color: var(--hover_color);
+}
+.heart:hover i{
+    color: #fff;
+}
+.heart div{
+    width: 60px;
+    height: 60px;
+    background-color:#fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heart i{
+    color: var(--hover_color);
+    font-size: 20px;
+    transition: 0.4s ease-in-out;
+}
+.course_price h5::selection{
+    background-color: #000;
+    color: #fff;
+}
+.course_name a::selection{
+    background-color: #000;
+    color: #fff;
+}
+.course_design_btn:hover {
+    background-color: #F2994A !important;
+}
+.course_design_green_btn:hover {
+    background-color: #219653 !important;
+}
+.course_development_red_btn:hover {
+    background-color: #EB5757 !important;
+}
+.course_write_btn:hover {
+    background-color: #219653 !important;
+}
+.course_content_btn:hover {
+    background-color: #2F80ED !important;
+}
+.course_seo_btn:hover {
+    background-color: #9B51E0 !important;
+}
+.course_data_btn:hover {
+    background-color: #EB5757 !important;
+}
+.course_development_red_btn{
+    color: #EB5757 !important
+}
+.course_development_btn:hover{
+    background-color: #F2994A !important
+}
+.course_btn:hover{
+    color: #fff !important;
+}
+.course_info{
+    position: relative;
+}
+.course_name_img img{
+    position: absolute;
+    bottom: 280px;
+    left: 10px;
+}
+.biography_pagination{
+    margin-top: 40px;
+}
+.biography_pagination ul li a ,.biography_pagination span{
+    width:40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 7px;
+    border: 2px solid #f1f1f1;
+    font-size: 22px;
+    color: #777C90;
+    margin-right: 15px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+.biography_pagination ul li a:hover{
+    background-color: #245D51;
+    color: #fff;
+}
+.current_page{
+    background-color: #245D51;
+    border-color: #245D51;
+    color: #fff !important;
+    font-size: 22px;
+}
+@media screen and (max-width : 1200px){
+    .section_middle{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width : 992px){
+  #instructor_bio_section  .instructor_main_part {
+        grid-template-columns: 100%;
+    }
+    .section_middle{
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+    }
+    .instructor_biography{
+        margin-top: 50px;
+    }
+    .biography_counter{
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width  : 768px){
+   .biography_counter .counter_section{
+        grid-template-columns: 100%;
+    }
+    .section_middle{
+        grid-template-columns: 100%;
+
+    }
+}
+@media  screen and (max-width : 355px){
+    .about_expert_div{
+        flex-direction: column;
+        text-align: center;
+    }
+    .course_name_img{
+        visibility: hidden;
+    }
+    .course_name ul {
+        flex-direction: column;
+    }
+    .course_name ul li a.course_btn {
+        display: block;
+        text-align: center;
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
+    .course_statistics{
+        flex-direction: column;
+    }
+    .course_statistics div{
+        justify-content: center;
+    }
+    .course_statistics div:nth-child(2){
+        margin: 0 !important;
+        margin-top: 10px !important
+    }
+    .course_price_responsive_column{
+        flex-direction: column;
+    }
+    .course_price h5{
+        margin-top: 10px !important
+    }
+    .biography_pagination ul{
+        flex-wrap: wrap;
+    }
+}
+/* instructor counter */
+#instructor_counter_section .counter_section{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 10px;
+}
+#instructor_counter_section{
+    padding: 80px 0;
+    background-color: #245C51;
+    text-align: center;
+}
+#instructor_counter_section h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 44px;
+}
+#instructor_counter_section p {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+#instructor_counter_section p::selection {
+    background-color: #000;
+    color: #fff;
+}
+#instructor_counter_section .counter_hr{
+    border: 2px solid var(--hover_color);
+    margin-top: 20px;
+}
+@media screen and (max-width  : 1200px){
+    #instructor_counter_section .counter_section{
+        grid-template-columns: 50% 50%;
+        gap: 30px;
+    }
+}
+@media screen and (max-width : 768px){
+    #instructor_counter_section .counter_section{
+        grid-template-columns: 100%;
+        gap: 30px;
+    }
+}
+
+/* footer */
+footer{
+    background-color: #245C51;
+    border-top: 1px solid #777C90;
+    background-image: url('https://weblearnbd.net/tphtml/epora/epora/assets/img/bg/shape-bg-02.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer ul{
+    padding: 0;
+}
+footer h3{
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+footer h3::selection ,ul li a::selection{
+    color: #fff;
+    background-color: #000;
+}
+.footer_top_div ul li a{
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+.footer_top ul li{
+    margin: 15px 0;
+}
+.footer_top{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 60px 0;
+}
+.footer_top_div{
+    padding: 0 15px;
+    
+}
+.footer_top_div ul li a:hover{
+    color: var(--hover_color);
+}
+/* footer responsive */
+@media screen and (max-width : 1200px){
+    .footer_top{
+        grid-template-columns: 33% 33% 33%;
+    }
+    .footer_top_div{
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width : 768px){
+    .footer_top{
+        grid-template-columns: 50% 50%;
+    }
+}
+@media screen and (max-width : 576px){
+    .footer_top{
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+}
+/* footer_bottom */
+.footer_bottom{
+    border: 1px solid #777C90;
+    padding: 60px 0 40px 0;
+}
+.footer_social ul li a{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+    margin-left: 5px;
+}
+.footer_bottom ul li a:hover{
+    background-color: var(--hover_color);
+}
+
+.footer_bottom_part{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.footer_social{
+    display: flex;
+    justify-content: end;
+}
+@media screen and (max-width : 992px){
+   .footer_bottom_part{
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+    .footer_social{
+        justify-content: center;
+    }
+    .footer_bottom_content{
+        margin: 15px 0;
+    }
+}
